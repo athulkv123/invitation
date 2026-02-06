@@ -8,106 +8,161 @@
 <style>
 body{
     margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg,#dff6ff,#fceaff);
-    text-align:center;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(#eaf6ff,#ffffff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
 }
 
-.container{
-    max-width:700px;
-    margin:30px auto;
-    background:white;
+/* Card */
+.card{
+    width:420px;
+    background:#eaf6ff;
     border-radius:25px;
-    padding:25px;
-    box-shadow:0 10px 40px rgba(0,0,0,0.15);
+    padding:30px 25px 40px;
+    text-align:center;
+    box-shadow:0 15px 50px rgba(0,0,0,0.15);
+    position:relative;
+    overflow:hidden;
+}
+
+/* Top clouds */
+.card:before{
+    content:"☁️ ☁️ ☁️";
+    position:absolute;
+    top:10px;
+    left:0;
+    right:0;
+    font-size:40px;
+    opacity:0.3;
+}
+
+/* Heading */
+.small{
+    letter-spacing:3px;
+    color:#a36a4f;
+    font-size:16px;
+    margin-top:25px;
 }
 
 h1{
-    color:#2c3e50;
-    font-size:36px;
-    margin-bottom:5px;
+    margin:10px 0 5px;
+    font-size:38px;
+    color:#3b6ea5;
+    font-weight:500;
 }
 
 h2{
-    color:#e84393;
-    font-size:30px;
-    margin:10px 0;
+    margin:0;
+    font-size:48px;
+    color:#3b6ea5;
 }
 
-img{
-    width:220px;
-    border-radius:20px;
-    margin:20px 0;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+/* Image */
+.photo{
+    margin:25px auto 20px;
+}
+
+.photo img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+    border:6px solid white;
+    box-shadow:0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Divider */
+.divider{
+    width:80%;
+    height:1px;
+    background:#aacbe8;
+    margin:20px auto;
+}
+
+/* Details */
+.day{
+    font-size:22px;
+    letter-spacing:4px;
+    color:#a36a4f;
+    margin-bottom:10px;
 }
 
 .details{
     font-size:18px;
-    margin:8px 0;
     color:#333;
+    margin:6px 0;
 }
 
 .parents{
-    font-size:20px;
     margin-top:15px;
-    color:#6c5ce7;
+    font-size:18px;
+    color:#3b6ea5;
     font-weight:bold;
 }
 
+/* Location button */
 .map-btn{
     display:inline-block;
     margin-top:25px;
-    padding:15px 28px;
-    background:#ff7675;
+    padding:14px 26px;
+    background:#ff7f7f;
     color:white;
     text-decoration:none;
     border-radius:30px;
     font-size:18px;
+    font-weight:bold;
+    box-shadow:0 6px 20px rgba(0,0,0,0.2);
 }
 
 .map-btn:hover{
-    background:#d63031;
+    background:#ff5252;
 }
 
-footer{
+/* Bottom balloons feel */
+.footer{
     margin-top:25px;
-    color:gray;
     font-size:14px;
+    color:#666;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-    <h1>🎉 Join Us For 🎉</h1>
-    <h2>Madhav's 1st Birthday</h2>
+<div class="card">
 
-    <!-- Birthday Boy Photo -->
-    <img src="Madhav.jpeg" alt="Madhav">
+    <div class="small">JOIN US FOR</div>
+    <h1>MADHAV'S 1ST</h1>
+    <h2>BIRTHDAY</h2>
 
-    <div class="details">We warmly invite you to celebrate</div>
-    <div class="details">our little prince's first birthday</div>
-
-    <div class="parents">
-        👨‍👩‍👦 Parents: Sinsha & Mukesh
+    <div class="photo">
+        <img src="Madhav.jpeg" alt="Madhav">
     </div>
 
-    <div class="details">
-    📅 Date: 13 February<br>
-    ⏰ Time: 5:30 PM to 9:00 PM<br>
-    📍 Venue: Word of Life Community Church
-   </div>
+    <div class="divider"></div>
 
+    <div class="day">THURSDAY</div>
 
-    <!-- Google Map -->
+    <div class="details">13 February</div>
+    <div class="details">5:30 PM – 9:00 PM</div>
+
+    <div class="parents"> 👨‍👩‍👧 Sinsha & Mukesh</div>
+
+    <div class="details" style="margin-top:10px;">
+        Word of Life Community Church
+    </div>
+
     <a class="map-btn" href="https://maps.app.goo.gl/M3QhhaeP9BMTDfHL7?g_st=iwb" target="_blank">
-        📍 View Party Location
+        View Party Location
     </a>
 
-    <footer>
-        With love ❤️ Waiting to celebrate together
-    </footer>
+    <div class="footer">
+        We warmly invite you to celebrate our little prince 👶
+    </div>
+
 </div>
 
 </body>
