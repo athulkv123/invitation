@@ -6,6 +6,72 @@
     <title>Join Us! Madhav’s 1st Birthday Celebration</title>
 
     <style>
+        /* PHOTO ENTRY + FLOAT */
+.photo-container{
+    animation: photoEntry 1.5s ease forwards, photoFloat 4s ease-in-out infinite;
+    opacity:0;
+    transform:scale(0.7);
+    animation-delay: .8s;
+}
+
+@keyframes photoEntry{
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes photoFloat{
+    0%,100%{ transform: translateY(0px) scale(1); }
+    50%{ transform: translateY(-10px) scale(1.03); }
+}
+
+/* PHOTO GLOW PULSE */
+.photo-frame{
+    animation: rotate 10s linear infinite, photoGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes photoGlow{
+    from{ box-shadow:0 0 25px rgba(255,105,180,0.4); }
+    to{ box-shadow:0 0 55px rgba(255,215,0,0.8); }
+}
+
+/* HAPPY BIRTHDAY TEXT ANIMATION */
+h2{
+    position:relative;
+    animation: textFadeUp 1s ease forwards, glowText 2s ease-in-out infinite alternate, textPop 1s ease;
+}
+
+/* glowing */
+@keyframes glowText{
+    from{ filter: drop-shadow(0 0 6px rgba(255,105,180,0.5)); }
+    to{ filter: drop-shadow(0 0 22px rgba(255,215,0,0.9)); }
+}
+
+/* pop effect once */
+@keyframes textPop{
+    0%{ transform:scale(.6); opacity:0; }
+    60%{ transform:scale(1.15); }
+    100%{ transform:scale(1); opacity:1; }
+}
+
+/* shiny sweep on HAPPY BIRTHDAY */
+h2::after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:60%;
+    height:100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.8), transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine{
+    0%{ left:-100%; }
+    100%{ left:140%; }
+}
+
         body{
             margin:0;
             font-family:'Georgia', serif;
