@@ -469,9 +469,27 @@ h2::after{
 </head>
 
 <body>
-    <audio autoplay loop>
-    <source src="hbd.mp3" type="audio/mpeg"> 
-   </audio>
+    <audio id="bgMusic" loop>
+    <source src="hbd.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let musicStarted = false;
+
+function startMusic(){
+    if(!musicStarted){
+        let music = document.getElementById("bgMusic");
+        music.volume = 0.6;   // soft volume
+        music.play();
+        musicStarted = true;
+    }
+}
+
+/* play on first touch/click */
+document.addEventListener("click", startMusic);
+document.addEventListener("touchstart", startMusic);
+</script>
+
     <div class="card">
 
         <div class="balloons">
