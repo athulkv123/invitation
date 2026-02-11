@@ -469,23 +469,21 @@ h2::after{
 </head>
 
 <body>
-    <audio id="bgMusic" loop>
+  <audio id="bgMusic" loop>
     <source src="hbd.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-let musicStarted = false;
+const music = document.getElementById("bgMusic");
 
 function startMusic(){
-    if(!musicStarted){
-        let music = document.getElementById("bgMusic");
-        music.volume = 0.6;   // soft volume
-        music.play();
-        musicStarted = true;
-    }
+    music.volume = 0.7;
+    music.play().catch(()=>{});
+    
+    document.removeEventListener("click", startMusic);
+    document.removeEventListener("touchstart", startMusic);
 }
 
-/* play on first touch/click */
 document.addEventListener("click", startMusic);
 document.addEventListener("touchstart", startMusic);
 </script>
