@@ -6,15 +6,36 @@
     <title>Join Us! Madhav’s 1st Birthday Celebration</title>
 
     <style>
-        .parent-icon{
-    width:40px;
-    height:40px;
+   .parent-icon{
+    width:26px;
+    height:26px;
     vertical-align:middle;
-    margin-right:8px;
-    border-radius:0;       /* no effects */
-    animation:none;        /* no animation */
-    box-shadow:none;       /* no glow */
+    margin-right:6px;
+    border-radius:6px;
+    
+    /* entry animation */
+    animation: parentFade 1s ease forwards, parentFloat 3s ease-in-out infinite;
+    opacity:0;
 }
+
+/* fade + slide */
+@keyframes parentFade{
+    from{
+        opacity:0;
+        transform:translateY(15px) scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* gentle floating */
+@keyframes parentFloat{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-4px); }
+}
+
 
        /* February 13 */
 .details:nth-of-type(1){
@@ -517,10 +538,11 @@ h2::after{
             <div class="details">13 February</div>
             <div class="details">⏰ 5:30 PM – 9:00 PM</div>
 
-           <div class="parents">
+             <div class="parents">
             <img src="parents.png" class="parent-icon">
             Sinsha & Mukesh
         </div>
+
 
 
             <div class="details parents" style="margin-top:8px;">
